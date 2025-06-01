@@ -4,7 +4,7 @@
 	email = josuealdana1@gmail.com
 	name = jaosito1
 [core]
-	editor = vim
+	editor = nvim
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
