@@ -1,11 +1,11 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "palette": {
-        "base_neutral": "#ECEBC9",
-        "earthy_brown": "#96845a",
-        "dusty_pink": "#C49A6C",
-        "muted_green":  "#859900",
-        "deep_shadow": "#5C5A4A"
+        "accent":      "#C2A87B",
+        "accent2":     "#A89065",
+        "accent3":     "#919F75",
+        "foreground":  "#D8DEE9",
+        "muted":       "#717782"
   },
   "blocks": [
     {
@@ -14,17 +14,17 @@
         {
           "type": "python",
           "style": "plain",
-          "foreground": "p:deep_shadow",
+          "foreground": "p:accent3",
           "template": "{{ if .Venv }}({{.Venv}}) {{ end }}"
         },
         {
-          "foreground": "p:muted_green",
+          "foreground": "p:foreground",
           "style": "plain",
           "template": "{{ .UserName }}@{{ .HostName }} ",
           "type": "session"
         },
         {
-          "foreground": "p:earthy_brown",
+          "foreground": "p:accent",
           "properties": {
             "folder_icon": "..\ue5fe..",
             "home_icon": "~",
@@ -35,7 +35,7 @@
           "type": "path"
         },
         {
-          "foreground": "p:dusty_pink",
+          "foreground": "p:accent2",
           "properties": {
             "branch_icon": "\ue725 ",
             "cherry_pick_icon": "\ue29b ",
@@ -54,7 +54,7 @@
         },
         {
           "style": "plain",
-          "foreground": "p:deep_shadow",
+          "foreground": "p:muted",
           "template": "\uf105",
           "type": "text"
         }   
