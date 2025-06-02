@@ -14,6 +14,9 @@ configuration {
 
     background-color: transparent;
     text-color: @text0;
+
+    padding: 0;
+    margin: 0;
 }
 
 window  {
@@ -26,7 +29,7 @@ window  {
 
 inputbar {
     children: [entry];
-    margin: 6px 0px;
+    margin: 0px 0px 8px 0px;
 }
 
 element selected {
