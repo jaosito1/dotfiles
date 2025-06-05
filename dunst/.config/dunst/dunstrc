@@ -41,7 +41,7 @@
     # Offset from the origin
     # NOTE: Dunst from version 1.11 and older use this alternative notation
     # offset = 10x50
-    offset = (10, 50)
+    offset = (30, 50)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -60,7 +60,7 @@
     progress_bar_height = 10
 
     # Set the frame width of the progress bar
-    progress_bar_frame_width = 1
+    progress_bar_frame_width = 0.5
 
     # Set the minimum width for the progress bar
     progress_bar_min_width = 150
@@ -89,7 +89,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 0
+    transparency = 30
 
     # Draw a line of "separator_height" pixel height between two
     # notifications.
@@ -108,10 +108,9 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 3
+    frame_width = 0
 
     # Defines color of the frame around the notification window.
-    frame_color = "#aaaaaa"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -144,7 +143,7 @@
 
     ### Text ###
 
-    font = Monospace 8
+    font = JetBrainsMono Nerd Font Mono 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -342,13 +341,12 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#222222"
-    foreground = "#888888"
-    timeout = 10
-    # Icon for notifications with low urgency
+    foreground = "#D8DEE9"
+    timeout = 10 # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#285577"
+    background = "#282A2E"
     foreground = "#ffffff"
     timeout = 10
     override_pause_level = 30
