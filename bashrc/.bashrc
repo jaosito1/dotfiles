@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 export PATH=$PATH:/home/jos/.local/bin
-eval "$(oh-my-posh init bash --config /home/jos/.config/omp-themes/main-arch.omp.json)"
+eval "$(oh-my-posh init bash --config ~/dotfiles/omp-themes/main-arch.omp.json)"
 
 alias vi='nvim'
 alias la='ls -A'
