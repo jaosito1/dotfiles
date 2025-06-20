@@ -19,10 +19,10 @@ vol ()
        echo "Please input a number from 1-100." 
        return 1
     else
-        if  pactl list sinks | grep -q RUNNING;
+        if  pactl list sinks | grep -q  -e RUNNING -e SUSPENDED;
         then
             local VOLUME=$1
-            local SINK=$(pactl list sinks | grep -B1 RUNNING| 
+            local SINK=$(pactl list sinks | grep -B1 -e RUNNING -e SUSPENDED| 
                 \awk '/Sink #/{print $2}' | tr -d "#");
             pactl set-sink-volume $SINK $VOLUME%
             echo "Changed volume to $VOLUME%."
