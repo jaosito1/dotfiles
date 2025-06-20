@@ -68,7 +68,7 @@ options nouveau modeset=0
 	2. kitty - https://sw.kovidgoyal.net/kitty/ 
 - Tools (Git, fuzzyf, rg),
 	1. git 
-	2. fzf, rp, tmux, tree
+	2. fzf, rp, tmux, tree, ripgrep
 - Notetaking and pdf reader, docx & ppt editor
 	1. obsidian, glow  --> .md  - https://github.com/charmbracelet/glow 
 	2. libreoffice  
