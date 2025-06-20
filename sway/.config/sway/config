@@ -9,7 +9,7 @@ font pango:JetBrainsMono Nerd Font Mono 10
 
 bar swaybar_command waybar
 
-output * bg ~/dotfiles/wallpapers/wp6.png fill
+# output * bg ~/dotfiles/wallpapers/wp7.jpg fill
 output eDP-1 mode 2880x1800@120Hz pos 1920 0
 output DP-2 mode 1920x1080@100Hz pos 0 0
 
@@ -22,3 +22,5 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec "rofi -show drun"
+#lock screen
+bindsym $mod+ctrl+l exec "swaylock"

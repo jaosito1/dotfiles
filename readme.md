@@ -26,7 +26,7 @@
 	1. swaywm - https://github.com/swaywm/sway/wiki
 - Personalization (Bar, wallpaper, fonts)
 	1. waybar - https://github.com/Alexays/Waybar
-	2. sway-output (included by swaywm)
+	2. sway-output (included by swaywm), swaybg 
 	3. FiraCode Nerd Font & JetBrainsMono Nerd Font - https://www.nerdfonts.com
 - Screen lock 
 	1. swaylock-effects - https://github.com/mortie/swaylock-effects
@@ -50,7 +50,6 @@ blacklist nouveau
 options nouveau modeset=0
 ```
 	https://wiki.archlinux.org/title/Hybrid_graphics
-
 - Audio control + media manager 
 	1. pipewire + wireplumber - https://wiki.archlinux.org/title/PipeWire#Audio_post-processing
 	2. playerctl - https://github.com/altdesktop/playerctl
@@ -59,6 +58,9 @@ options nouveau modeset=0
 	2. bluetui - https://github.com/pythops/bluetui
 - Network managing 
 	1. Network manager - https://wiki.archlinux.org/title/NetworkManager (dns resolving + wifi + ethernet)
+- Brightness 
+    1. gammastep - https://gitlab.com/chinstrap/gammastep
+    2. brightnessctl - https://github.com/Hummer12007/brightnessctl
 
 ### Productivity
 - Code editor and terminal emulator 
@@ -81,7 +83,8 @@ options nouveau modeset=0
 - Notifications 
 	1. dunst - https://github.com/dunst-project/dunst
 - User dirs 
-``` conf
+    1. xdg-user-dirs - https://wiki.archlinux.org/title/XDG_user_directories
+``` shell
 ~/.config/user-dirs.dirs
 
 XDG_DESKTOP_DIR="$HOME/desktop"
@@ -96,11 +99,8 @@ XDG_VIDEOS_DIR="$HOME/videos"
 - Images
 	1. imv (image viewer) - https://sr.ht/~exec64/imv/
 	2. grim + slurp - https://sr.ht/~emersion/grim/ & https://github.com/emersion/slurp
-	
 - Clipboard manager 
 	1. wl-clipboard - https://github.com/bugaevc/wl-clipboard
 	2. cliphist - https://github.com/sentriz/cliphist
 - Ability to manage different keyboard layouts and change between them (FR, EN, ES)
-	 1. sway-output - https://wiki.archlinux.org/title/Sway#Keymap
-- Blue light filter
-	1. gammastep - https://gitlab.com/chinstrap/gammastep
+	1. sway-output - https://wiki.archlinux.org/title/Sway#Keymap
