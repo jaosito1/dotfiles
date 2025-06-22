@@ -7,15 +7,16 @@
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.55);
     /* background-color: transparent; */
+    background-color: rgba(0, 0, 0, 0.55);
     color: #ffffff;
 }
 
 
 #workspaces button {
     color: #ffffff;
-    padding: 0 4px;
+    padding: 0 8px;
+    margin: 0 2px;
 }
 
 #workspaces button.focused {
@@ -34,15 +35,27 @@ window#waybar {
     margin-right: 6px;
 }
 
+#battery.charging {
+    background-color: #919F75;
+    padding-right: 10px;
+    padding-left: 4px;
+    margin-right: 0;
+    border-radius: 10px;
+}
+
 #wireplumber {
     padding: 4px;
 }
 
 
-#bluetooth,
+#bluetooth {
+    padding-left: 4px;
+    margin-left: 2px;
+}
+
 #power-profiles-daemon {
     padding-left: 4px;
-
+    margin-right: 5px;
 }
 
 #network {
@@ -52,4 +65,10 @@ window#waybar {
 
 #language {
     margin-left: 2px;
+}
+
+#tray {
+    padding-right: 3px;
+    margin-right: 14px;
+    margin-bottom: 2px;
 }

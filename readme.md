@@ -40,8 +40,10 @@
 - Power settings 
 	1. power-profiles-daemon - https://wiki.archlinux.org/title/CPU_frequency_scaling#power-profiles-daemon
 	2. powerprofilesctl
+    3. python-pygobject (dependency)
 - Asus control (fans, leds)
 	1. asusctl - https://asus-linux.org/guides/arch-guide/
+    (add keyserver hkp://ubuntu.keyserver.com:80 to /etc/pacman.d/gnupg/gpg.conf)
 - Graphics management 
 	1. Disable dGPU drivers
 ```

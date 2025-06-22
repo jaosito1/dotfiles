@@ -5,7 +5,8 @@
     "fixed-center": "true",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["battery", "wireplumber", "group/hardware", "tray", "clock"],
+    "modules-right": ["battery", "wireplumber", "group/hardware", "clock", "tray"],
+
     "group/hardware": {
         "orientation": "horizontal",
         "modules": ["sway/language", "bluetooth", "network", "power-profiles-daemon"]
@@ -17,12 +18,13 @@
 
 
     "sway/workspaces": {
-        "format": "{icon}",
+        // "format": "<span size='10pt'>{icon}</span>",
+        "format": "{icon}", 
         "format-icons": {
-            "1": "",
-            "2": "",
-            "6": "",
-            "10": "",
+            "1":"",
+            "2":"",
+            "6":"",
+            "10":"",
         },
         "persistent-workspaces": {
             "1": [],
@@ -33,7 +35,8 @@
 
     "battery": {
         "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "format-charging": "{capacity}% {icon}",
     },
 
     "wireplumber": {
@@ -56,20 +59,25 @@
         "format-wifi": "{icon}",
         "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
         "format-ethernet": "󱘖",
+        // "format-ethernet": "󰌘",
         "format-disconnected": "󰖪",
         "tooltip-format-wifi": "{essid} / {signalStrength}%"
     }, 
 
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format-alt": "{:%a, %d. %b  %H:%M}",
     },
 
 
     "power-profiles-daemon": {
-
+        "format": "{icon}",
+        "format-icons": {
+            "power-saver": "",
+            "balanced": "", 
+            "performance": "󰓅"
+        } 
     },
 
     "tray": {
-
     }
 }
