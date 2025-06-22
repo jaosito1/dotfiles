@@ -14,10 +14,11 @@ alias vi='nvim'
 alias la='ls -A'
 alias ls='ls --color=auto'
 alias bt='bluetui'
+alias grep='grep --color="auto"'
 
 # Import scripts
-if [ -f "$HOME/dotfiles/scripts/volume.sh" ]; then
-    . "$HOME/dotfiles/scripts/volume.sh"
+if [ -f "$HOME/dotfiles/bashrc/scripts/utils.sh" ]; then
+    . "$HOME/dotfiles/bashrc/scripts/utils.sh"
 fi
 
 PS1='[\u@\h \W]\$ '
