@@ -24,6 +24,7 @@
 	1.  ly - https://github.com/fairyglade/ly
 - Window manager and compositor 
 	1. swaywm - https://github.com/swaywm/sway/wiki
+    2. xwayland (x native apps support)
 - Personalization (Bar, wallpaper, fonts)
 	1. waybar - https://github.com/Alexays/Waybar
 	2. sway-output (included by swaywm), swaybg 
