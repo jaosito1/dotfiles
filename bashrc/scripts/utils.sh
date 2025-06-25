@@ -16,11 +16,18 @@ vol ()
         then
             SINK=$(echo "$LIST" | grep -B1 SUSPENDED | awk '/Sink #/{print $2;exit}' | tr -d "#")
         else
-            echo "no audio running or suspended :("
+            echo "no audio running or suspende :("
             return 1 
         fi
-        pactl set-sink-volume $SINK $VOLUME%
-        echo "Changed volume to $VOLUME% for sink $SINK."
+
+        if [[ "$VOLUME" = "m" ]]; 
+        then 
+            pactl set-sink-mute $SINK toggle 
+            echo "(Un)Muted sink $SINK."
+        else
+            pactl set-sink-volume $SINK $VOLUME%
+            echo "Changed volume to $VOLUME% for sink $SINK."
+        fi
     fi
 }
 
