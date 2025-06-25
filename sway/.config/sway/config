@@ -10,7 +10,7 @@ font pango:JetBrainsMono Nerd Font Mono 10
 
 bar swaybar_command waybar
 # exec_always gammastep && dunst
-exec_always dunst
+exec_always dunst & gammastep
 
 # Clipboard functionality 
 exec_always wl-paste --watch cliphist store
