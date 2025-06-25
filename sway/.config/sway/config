@@ -12,6 +12,12 @@ bar swaybar_command waybar
 # exec_always gammastep && dunst
 exec_always dunst
 
+# Clipboard functionality 
+exec_always wl-paste --watch cliphist store
+bindsym $mod+s exec 'grim -g "$(slurp)" - | wl-copy'
+bindsym $mod+Shift+s exec 'grim - | wl-copy'
+bindsym $mod+c exec "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+
 # output * bg ~/dotfiles/wallpapers/wp6.png fill
 # output * bg ~/downloads/test.jpg fill
 output eDP-1 mode 2880x1800@120Hz pos 1920 0

@@ -24,7 +24,6 @@
 	1.  ly - https://github.com/fairyglade/ly
 - Window manager and compositor 
 	1. swaywm - https://github.com/swaywm/sway/wiki
-    2. xwayland (x native apps support)
 - Personalization (Bar, wallpaper, fonts)
 	1. waybar - https://github.com/Alexays/Waybar
 	2. sway-output (included by swaywm), swaybg 
@@ -56,6 +55,7 @@ options nouveau modeset=0
 - Audio control + media manager 
 	1. pipewire + wireplumber - https://wiki.archlinux.org/title/PipeWire#Audio_post-processing
 	2. playerctl - https://github.com/altdesktop/playerctl
+    (make sure to install linux-firmware-cirrus)
 - Bluetooth 
 	1. bluez - https://wiki.archlinux.org/title/Bluetooth#Installation 
 	2. bluetui - https://github.com/pythops/bluetui
