@@ -2,31 +2,24 @@ vol ()
 {
     if [[ -z "$1" ]]; 
     then
-       echo "Please input a number from 1-100." 
+       echo "Please input a number from 1-100 or m for mute" 
        return 1
-    else
+    else 
         local VOLUME=$1
-        local LIST=$(pactl list sinks)
-        local SINK=""
-
-        if echo "$LIST" | grep -q RUNNING; 
+        local SINK=$(pactl list short sinks | awk '/RUNNING/{print $1;exit} /SUSPENDED/{print $1;exit} /IDLE/{print $1;exit}')
+        if [[ -z "$SINK" ]];
         then
-            SINK=$(echo "$LIST" | grep -B1 RUNNING | awk '/Sink #/{print $2;exit}' | tr -d "#")
-        elif echo "$LIST" | grep -q SUSPENDED;
-        then
-            SINK=$(echo "$LIST" | grep -B1 SUSPENDED | awk '/Sink #/{print $2;exit}' | tr -d "#")
+            echo "no audio running or suspended :("
+            return 1
         else
-            echo "no audio running or suspende :("
-            return 1 
-        fi
-
-        if [[ "$VOLUME" = "m" ]]; 
-        then 
-            pactl set-sink-mute $SINK toggle 
-            echo "(Un)Muted sink $SINK."
-        else
-            pactl set-sink-volume $SINK $VOLUME%
-            echo "Changed volume to $VOLUME% for sink $SINK."
+            if [[ "$VOLUME" = "m" ]]; 
+            then 
+                pactl set-sink-mute $SINK toggle 
+                echo "(Un)Muted sink $SINK."
+            else
+                pactl set-sink-volume $SINK $VOLUME%
+                echo "Changed volume to $VOLUME% for sink $SINK."
+            fi
         fi
     fi
 }
