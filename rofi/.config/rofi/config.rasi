@@ -21,7 +21,7 @@ configuration {
 
 window  {
     location: center;
-    width: 15%;
+    width: 12%;
     height: 200px;
     padding: 10px;
     background-color: @bg0;
