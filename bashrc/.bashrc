@@ -12,7 +12,7 @@ eval "$(oh-my-posh init bash --config ~/dotfiles/omp-themes/main-arch.omp.json)"
 
 alias vi='nvim'
 alias la='ls -A'
-alias ls='ls --color=auto'
+alias ls='ls -l --color=auto'
 alias bt='bluetui'
 alias grep='grep --color="auto"'
 
