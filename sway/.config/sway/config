@@ -9,8 +9,8 @@ font pango:JetBrainsMono Nerd Font Mono 10
 
 
 bar swaybar_command waybar
-# exec_always gammastep && dunst
 exec_always dunst & gammastep
+exec "powerprofilesctl set power-saver"
 
 # Clipboard functionality 
 exec_always wl-paste --watch cliphist store
@@ -23,6 +23,8 @@ bindsym $mod+c exec "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 output eDP-1 mode 2880x1800@120Hz pos 1920 0
 output DP-2 mode 1920x1080@100Hz pos 0 0
 
+xwayland enable
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -34,3 +36,5 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec "rofi -show drun"
 #lock screen
 bindsym $mod+ctrl+l exec "swaylock"
+
+include /etc/sway/config.d/*

@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything 
 [[ $- != *i* ]] && return
 
-export PATH=$PATH:/home/jos/.local/bin
+export PATH=$PATH:/home/jos/.local/bin:/home/jos/go/bin
 eval "$(oh-my-posh init bash --config ~/dotfiles/omp-themes/main-arch.omp.json)"
 
 # Setup aliases
