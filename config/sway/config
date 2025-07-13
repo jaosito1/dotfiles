@@ -18,7 +18,7 @@ bindsym $mod+s exec 'grim -g "$(slurp)" - | wl-copy'
 bindsym $mod+Shift+s exec 'grim - | wl-copy'
 bindsym $mod+c exec "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
-output * bg ~/dotfiles/wallpapers/wp8.jpg fill
+output * bg ~/dotfiles/assets/wallpapers/wp8.jpg fill
 output eDP-1 mode 2880x1800@120Hz pos 1920 0
 output DP-2 mode 1920x1080@100Hz pos 0 0
 
