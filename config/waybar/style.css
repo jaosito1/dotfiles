@@ -15,8 +15,7 @@ window#waybar {
 
 #workspaces button {
     color: #ffffff;
-    padding: 0 8px;
-    margin: 0 2px;
+    padding: 0 4px 0 2px;
 }
 
 #workspaces button.focused {
@@ -46,7 +45,6 @@ window#waybar {
 #wireplumber {
     padding: 4px;
 }
-
 
 #bluetooth {
     padding-left: 4px;
