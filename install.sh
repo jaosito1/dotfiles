@@ -21,7 +21,7 @@ omp_dir="$HOME/.local/share/omp"
 mkdir -p "$omp_dir"
 rm -f "$omp_dir"/*.omp.json
 
-ln -sf "$root_dir/assets/omp-themes/main.omp.json" "$omp_dir/main.omp.json" 
+ln -sf "$root_dir/assets/omp-themes/main-arch.omp.json" "$omp_dir/main.omp.json" 
 echo "Created OMP directory at $omp_dir"
 
 # -- Import scripts
