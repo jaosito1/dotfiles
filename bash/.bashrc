@@ -6,20 +6,16 @@
 [[ $- != *i* ]] && return
 
 export PATH=$PATH:/home/jos/.local/bin:/home/jos/go/bin
-eval "$(oh-my-posh init bash --config ~/dotfiles/assets/omp-themes/main-arch.omp.json)"
+eval "$(oh-my-posh init bash --config $HOME/.local/share/omp/main.omp.json)"
 
 # Setup aliases
 
 alias vi='nvim'
 alias la='ls -A'
 alias ls='ls -l --color=auto'
+
 alias bt='bluetui'
 alias grep='grep --color="auto"'
-
-# Import scripts
-if [ -f "$HOME/dotfiles/scripts/utils.sh" ]; then
-    . "$HOME/dotfiles/scripts/utils.sh"
-fi
 
 PS1='[\u@\h \W]\$ '
 
