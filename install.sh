@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # -- Setup paths
-export XDG_CONFIG_HOME=$HOME/.config
-
+home_config=$HOME/.config
 root_dir="$(pwd)"
 scripts_dir="$root_dir/scripts"
 
@@ -13,16 +12,8 @@ if [[ "$is_root" != "dotfiles" ]]; then
 fi
 
 # -- Config files
-stow config/ --target="$XDG_CONFIG_HOME" || exit 1
-echo "Symlinked all config files to $XDG_CONFIG_HOME"
-
-# -- Create OMP directory and import layout
-omp_dir="$HOME/.local/share/omp"
-mkdir -p "$omp_dir"
-rm -f "$omp_dir"/*.omp.json
-
-ln -sf "$root_dir/assets/omp-themes/main-arch.omp.json" "$omp_dir/main.omp.json" 
-echo "Created OMP directory at $omp_dir"
+stow config/ --target="$home_config" || exit 1
+echo "Symlinked all config files to $home_config"
 
 # -- Import scripts
 pushd "$scripts_dir" > /dev/null || exit 1 
