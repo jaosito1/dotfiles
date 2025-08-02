@@ -16,12 +16,12 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey -s ^o "tmux-sessionizer\n"
 
-open-nnn() {
-    nnn <$TTY
+open-file-manager() {
+    ranger <$TTY
     zle redisplay
 }
-zle -N open-nnn
-bindkey '^e' open-nnn
+zle -N open-file-manager
+bindkey '^e' open-file-manager
 
 # aliases
 alias vi='nvim'
