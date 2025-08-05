@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cloud_path="[01] Notes/vaultBackup"
+cloud_path="[01] Notes/obsidianVault"
 local_path="$HOME/documents/Main-Vault"
 
 # create cache file for log
