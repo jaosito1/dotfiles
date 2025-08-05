@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+cloud_path="[01] Notes/vaultBackup"
+local_path="$HOME/documents/Main-Vault"
+
+# create cache file for log
+cache_location=$XDG_CACHE_HOME/onedrivesync
+touch "$cache_location"
+
+# set up exclude filters
+exclude_path="$XDG_CONFIG_HOME/rclone/exclude-flags"
+
+get_choice () {
+    choice=$(echo "copy|sync|log|exit" | rofi -sep "|" \
+        -dmenu -mesg "<span size='medium'>some files are not up to date with onedrive</span>" \
+        -theme-str 'window {width: 30%;}')
+
+    [[ -z "$choice" ]] && exit 1
+
+    case "$choice" in
+        "copy") 
+            rclone copy onedrive:"$cloud_path" "$local_path" 
+            notify-send "files copied successfully to $local_path!"
+        ;;
+        "sync") 
+            rclone sync onedrive:"$cloud_path" "$local_path" --exclude-from "$exclude_path"
+            notify-send "files synced successfully to $local_path!"
+        ;;
+        "log") 
+            awk '$1 != "="' "$cache_location" | less
+            get_choice
+        ;;
+        "exit") 
+            exit 0
+        ;;
+        *) 
+            exit 1 
+        ;;
+    esac
+}
+
+if ! rclone check onedrive:"$cloud_path" "$local_path" --combined "$cache_location" \
+    --exclude-from "$exclude_path" &>/dev/null; then 
+    get_choice
+fi
