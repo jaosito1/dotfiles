@@ -27,7 +27,7 @@ get_choice () {
             notify-send "files synced successfully to $local_path!"
         ;;
         "log") 
-            awk '$1 != "="' "$cache_location" | less
+            kitty sh -c "awk '\$1 != \"=\"' \"$cache_location\" | less"
             get_choice
         ;;
         "exit") 

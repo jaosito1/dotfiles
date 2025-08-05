@@ -22,6 +22,8 @@ output * bg ~/dotfiles/assets/wallpapers/wp8.jpg fill
 output eDP-1 mode 2880x1800@120Hz pos 1920 0
 output DP-2 mode 1920x1080@100Hz pos 0 0
 
+exec_always systemctl --user start onedrive-obsidian.service
+
 xwayland enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
