@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cloud_path="[01] Notes/obsidianVault"
+cloud_path="onedrive:[01] Notes/obsidianVault"
 local_path="$HOME/documents/Main-Vault"
 
 # create cache file for log
@@ -19,11 +19,11 @@ get_choice () {
 
     case "$choice" in
         "copy") 
-            rclone copy onedrive:"$cloud_path" "$local_path" 
+            rclone copy "$cloud_path" "$local_path" 
             notify-send "files copied successfully to $local_path!"
         ;;
         "sync") 
-            rclone sync onedrive:"$cloud_path" "$local_path" --exclude-from "$exclude_path"
+            rclone sync "$cloud_path" "$local_path" --exclude-from "$exclude_path"
             notify-send "files synced successfully to $local_path!"
         ;;
         "log") 
@@ -39,7 +39,7 @@ get_choice () {
     esac
 }
 
-if ! rclone check onedrive:"$cloud_path" "$local_path" --combined "$cache_location" \
-    --exclude-from "$exclude_path" &>/dev/null; then 
+if ! rclone check "$cloud_path" "$local_path" --combined "$cache_location" \
+    --exclude-from "$exclude_path"; then 
     get_choice
 fi
