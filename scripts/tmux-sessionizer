@@ -4,7 +4,7 @@
 if [[ $# -eq 1 ]]; then 
     selected=$1
 else
-    selected=$(find ~/coding ~/dev ~/coding/goWithTests -maxdepth 1 -mindepth 1 -type d | fzf)
+    selected=$(find ~/coding ~/dev -maxdepth 1 -mindepth 1 -type d | fzf)
 fi
 
 if [[ -z "$selected" ]]; then
