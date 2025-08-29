@@ -13,10 +13,10 @@ if [[ -z "$sink" ]]; then
 fi
 
 if [[ "$volume_level" = "m" ]]; then
-    pactl set-sink-mute $sink toggle 
+    pactl set-sink-mute $sink toggle || exit 1
     echo "(Un)Muted sink $sink."
     exit 0
 fi
 
-pactl set-sink-volume $sink $volume_level%
+pactl set-sink-volume $sink $volume_level% || exit 1
 echo "Changed volume to $volume_level% for sink $sink."

@@ -16,24 +16,28 @@ exec "powerprofilesctl set power-saver"
 exec_always wl-paste --watch cliphist store
 bindsym $mod+s exec 'grim -g "$(slurp)" - | wl-copy'
 bindsym $mod+Shift+s exec 'grim - | wl-copy'
-bindsym $mod+c exec "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+bindsym $mod+c exec "cliphist list | rofi -dmenu -theme-str 'window {width: 50%;}' | cliphist decode | wl-copy"
 
 output * bg ~/dotfiles/assets/wallpapers/wp8.jpg fill
 output eDP-1 mode 2880x1800@120Hz pos 1920 0
 output DP-2 mode 1920x1080@100Hz pos 0 0
 
+exec systemctl --user start onedrive-obsidian.service
+
 xwayland enable
 
-# Use Mouse+$mod to drag floating windows to their wanted position
+# use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
 # start a terminal
 bindsym $mod+Return exec kitty 
 # kill focused window
 bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+d exec "rofi -show drun"
-#lock screen
+# lock screen
 bindsym $mod+ctrl+l exec "swaylock"
+# start ranger 
+bindsym $mod+e exec "kitty sh -c \"ranger\""
+
 
 include /etc/sway/config.d/*

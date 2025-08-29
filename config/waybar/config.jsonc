@@ -21,8 +21,8 @@
         // "format": "<span size='10pt'>{icon}</span>",
         "format": "{icon}", 
         "format-icons": {
-            "1":"",
-            "2":"",
+            "1":"",
+            "2":"",
             "6":"",
             "10":"",
         },
@@ -65,7 +65,8 @@
     }, 
 
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}",
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a, %d. %b}", 
     },
 
 

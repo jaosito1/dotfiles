@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+cloud_path="onedrive:[01] Notes/obsidianVault"
+local_path="$HOME/documents/Main-Vault"
+
+# set up exclude filters
+exclude_path="$XDG_CONFIG_HOME/rclone/exclude-flags"
+
+rclone check "$cloud_path" "$local_path" --exclude-from "$exclude_path" && exit 0
+
+rclone sync "$local_path" "$cloud_path" --exclude-from "$exclude_path" 
+notify-send "obsidian vault synced to onedrive on dir $cloud_path" 
+exit 0

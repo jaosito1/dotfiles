@@ -1,0 +1,11 @@
+#!/bin/sh
+
+alias vi='nvim'
+alias ls='ls -l --color=auto'
+alias la='ls -av'
+
+alias bt='bluetui'
+alias grep='grep --color="auto"'
+
+# xdg directories
+alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""

@@ -1,0 +1,12 @@
+[Unit]
+Description=OneDrive Sync Tool
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/jos/.local/bin/check-obsidianVault
+TimeStartSec=30
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,44 @@
+# path to oh my zsh install
+export ZSH="$ZDOTDIR/ohmyzsh"
+ZSH_THEME="robbyrussell"
+
+# history options
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE="$XDG_CACHE_HOME/zsh_history"
+
+# plugins
+plugins=(git zsh-syntax-highlighting)
+
+source $ZSH/oh-my-zsh.sh
+
+# keybinds
+
+bindkey -s ^o "tmux-sessionizer\n"
+
+open-file-manager() {
+    ranger <$TTY
+    zle redisplay
+}
+zle -N open-file-manager
+bindkey '^e' open-file-manager
+
+# aliases
+alias vi='nvim'
+alias ls='ls --color=auto'
+alias la='ls -lavh'
+
+alias bt='bluetui'
+alias grep='grep --color="auto"'
+
+# xdg directories
+alias wget="wget --hsts-file="$XDG_CACHE_HOME/wget-hsts""
+
+
+# ---------------------------------
+# source alias and shortcuts
+# [ -f "$XDG_CONFIG_HOME/shell/aliasrc" ] && source "$XDG_CONFIG_HOME/shell/aliasrc"
+
+# main opts
+# setopt globdots
+
